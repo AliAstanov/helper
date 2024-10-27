@@ -5,7 +5,10 @@ import (
 	"strconv"
 )
 
-offset := (page - 1) * limit
+func Offset(limit int, page int) int{
+	 offset := (page - 1) * limit
+	return offset
+}
 
 func DataParser1[T1 any, T2 any](src T1, dst T2) error {
 	bytData, err := json.Marshal(src)
